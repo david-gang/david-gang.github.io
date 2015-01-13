@@ -27,7 +27,7 @@ footer-links:
   pinterest: 
   rss: # just type anything here for a working RSS icon, make sure you set the "url" above!
   twitter: jekyllrb
-  stackoverflow: https://stackoverflow.com/users/2343743/david-michael-gang # your stackoverflow profile, e.g. "users/50476/bart-kiers"
+  stackoverflow: users/2343743/david-michael-gang # your stackoverflow profile, e.g. "users/50476/bart-kiers"
 
 # Your disqus shortname, entering this will enable commenting on posts
 disqus: 
