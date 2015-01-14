@@ -34,3 +34,7 @@ module.exports = function(grunt) {
 
 };
 ```
+
+The key points here are the loadNpmTasks and initConfig functions.
+
+#loadNpmTasks
