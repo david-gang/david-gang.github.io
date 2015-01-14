@@ -62,7 +62,7 @@ module.exports = function(grunt) {
   grunt.registerMultiTask('jshint', 'Validate files with JSHint.', function() {
 ...
 }
-```javascript
+```
 
 This function is called by the line
 > grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -83,3 +83,5 @@ In the initConfig function the grunt.config object is initialized.
 Every plugin can then read the relevant configuration through the grunt.config function.
 
 
+#Summary
+This article tried to give a short overview what is happening behind the scenes when running a grunt task.
