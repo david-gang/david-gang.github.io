@@ -36,6 +36,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['jshint']);
 
 };
+
 ```
 
 The key points here are the loadNpmTasks and initConfig functions.
@@ -80,4 +81,5 @@ The missing part is how we configure the tasks.
 
 In the initConfig function the grunt.config object is initialized.
 Every plugin can then read the relevant configuration through the grunt.config function.
+
 
