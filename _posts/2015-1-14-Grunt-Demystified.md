@@ -52,6 +52,7 @@ This is they key point of how grunt plugins are loaded.
 #registerTask
 
 This is an excerpt from grunt-jshint
+
 ```javascript
 module.exports = function(grunt) {
 
@@ -61,7 +62,8 @@ module.exports = function(grunt) {
 
   grunt.registerMultiTask('jshint', 'Validate files with JSHint.', function() {
 ...
-}
+};
+
 ```
 
 This function is called by the line
