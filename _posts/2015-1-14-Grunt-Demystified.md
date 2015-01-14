@@ -39,4 +39,8 @@ The key points here are the loadNpmTasks and initConfig functions.
 
 #loadNpmTasks
 
-The 
+Grunt requires the javascript files in the javascript files of the module argument.
+
+If the required object resolves to a function it is called.
+
+
