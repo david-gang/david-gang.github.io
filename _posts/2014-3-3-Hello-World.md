@@ -7,7 +7,7 @@ title: Grunt demystified
 When working with grunt it looks sometimes like black magic how it works. 
 After looking a bit into the codebase i understood finally how this tool works.
 
-Here is the sample gruntfile from the grumt website
+Here is the sample gruntfile from the <a href="http://gruntjs.com/sample-gruntfile">grunt website</a>
 
 ```javascript
 module.exports = function(grunt) {
