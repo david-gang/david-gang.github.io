@@ -2,6 +2,7 @@
 layout: post
 title: How to sync grunt build results with tomcat webapps folder
 ---
+
 ##Task
 Plug in an angular application in an existing maven project which creates the webapps folder of the tomcat.
 
