@@ -3,12 +3,12 @@ layout: post
 title: Grunt demystified
 ---
 
-#Motivation
+# Motivation
 When working with grunt it looks sometimes like black magic how it works. 
 This makes it harder to look for solutions when things go wrong.
 The aim of this article is to explain what occurs behind the scenes when someone calls a grunt task from the command line
 
-#Sample Gruntfile
+# Sample Gruntfile
 
 Here is the sample gruntfile from the <a href="http://gruntjs.com/sample-gruntfile">grunt website</a>
 
@@ -79,11 +79,11 @@ the jshint task is called.
 
 The missing part is how we configure the tasks.
 
-#initConfig
+# initConfig
 
 In the initConfig function the grunt.config object is initialized.
 Every plugin can then read the relevant configuration through the grunt.config function.
 
 
-#Summary
+# Summary
 This article tried to give a short overview what is happening behind the scenes when running a grunt task.

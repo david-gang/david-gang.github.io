@@ -4,10 +4,11 @@ title: How to sync grunt build results with tomcat webapps folder
 ---
 
 
-##Task
+## Task
+
 Plug in an angular application in an existing maven project which creates the webapps folder of the tomcat.
 
-#Try 1 - filesync plugin
+# Try 1 - filesync plugin
 
 The plugin i planned to use was the <a href="http://marketplace.eclipse.org/content/filesync">filesync plugin</a>.
 
@@ -17,7 +18,7 @@ This worked fine, but the problem was that i had uglified javascripts which were
 
 Because they were created externally, eclipse was not aware of their existence and therefore did not sync them.
 
-#Try 2 - filesync plugin and "refresh using native hooks or polling"
+# Try 2 - filesync plugin and "refresh using native hooks or polling"
 
 The main problem was that eclipse was not aware of changes caused by external programs.
 
@@ -32,7 +33,7 @@ Here the problem started.
 
 Suddenly i got out of heap messages, when running thh maven build the java classes got corrupted ...
 
-#Try3 - Use the grunt-sync plugin
+# Try3 - Use the grunt-sync plugin
 
 Finally i removed the filesync plugin usage and used the grunt-sync <a href="https://www.npmjs.com/package/grunt-sync">plugin</a>.
 
