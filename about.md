@@ -13,4 +13,4 @@ My interests lie in:
 * Big data and machine learning
  
  
-Here is my [Linkedin account](https://www.linkedin.com/in/david-michael-gang-622b788)
+Here is my [Linkedin account](https://www.linkedin.com/in/AAIAAAGYtHoBl0h0_0U88zIhAT6h6Os84P6Mxzs/)
