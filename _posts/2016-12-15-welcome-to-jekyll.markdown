@@ -18,7 +18,7 @@ There is syntax highlighting out the box and if you want to improve or change so
 
 # Technical setup
 
-##Installation process
+## Installation process
 As with most cool tools it is not fully supported on windows
 
 I followed the link of https://labs.sverrirs.com/jekyll/ until  page 2  
