@@ -185,7 +185,7 @@ bundle exec jekyll serve
 
 it works
 
-#Deploy it to github
+# Deploy it to github
 
 * Create a github repository with the name <your user name>.github.io
 
