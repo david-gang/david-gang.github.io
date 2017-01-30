@@ -7,7 +7,7 @@ categories: solr
 
 In the following post we will discuss the general architecture of SolrCloud.
 
-#Introduction 
+# Introduction 
 
 The  [solr documentation](https://cwiki.apache.org/confluence/display/solr/SolrCloud) describes SolrCloud the following way:
 
@@ -25,7 +25,7 @@ In general the solr documentation is great for users with previous knowledge in 
 I tried for several days to understand what Zookeeper is, what Solr Cloud is and how they interact.
 This will explained below.
 
-#Zookeeper
+# Zookeeper
 
 The name of Zookeeper is quite misleading. A zookeeper normally moves around and checks that all animals behave nice and get food.
 
