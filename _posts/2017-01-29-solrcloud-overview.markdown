@@ -35,7 +35,9 @@ The idea behind this is very simple. One of the hardest parts of a distributed s
 So let's write a service which accomplishes this and let us expose its services as a library.
 
 Zookeeper is more like a reception
+
 ![Reception]({{ site.github.url }}/assets/reception.jpg){:class="img-responsive"}
+
 Zookeper consists of a number of nodes which can be compared to a receptionist. There is nothing special with a certain node. There is no master slave relationship where beforehand we decide who may change the data and from whom we may read.
 As here with the receptionist there is no master worker.
 
@@ -63,10 +65,10 @@ As a consequence of this design, the following parties needs to know all the ins
 * Solr instances
 * Solr4j Clients
 
-This makes the manual addition of zookeeper instances very tedious. The situation will improve with zookeeper 3.5 as explained [here] (http://mail-archives.apache.org/mod_mbox/lucene-solr-user/201701.mbox/%3Ca768c4f2-a284-9179-e505-919014b29818%40elyograg.org%3E) but as it is still in alpha this does not help too much.
+This makes the manual addition of zookeeper instances very tedious. The situation will improve with zookeeper 3.5 as explained [here](http://mail-archives.apache.org/mod_mbox/lucene-solr-user/201701.mbox/%3Ca768c4f2-a284-9179-e505-919014b29818%40elyograg.org%3E) but as it is still in alpha this does not help too much.
 The solution is either to 
 
-* Administrate the configuration through puppet as explained [here] (http://mail-archives.apache.org/mod_mbox/lucene-solr-user/201701.mbox/%3Czarafa.5889fbcc.69a6.5e96630819e09ea9%40mail1.ams.nl.openindex.io%3E)
+* Administrate the configuration through puppet as explained [here](http://mail-archives.apache.org/mod_mbox/lucene-solr-user/201701.mbox/%3Czarafa.5889fbcc.69a6.5e96630819e09ea9%40mail1.ams.nl.openindex.io%3E)
 * Start with a reasonable number of zookeeper instances so the list does not have to be changed. It is recommended to start with 5 zookeeper instances as explained in the [SO post](http://stackoverflow.com/questions/41874718/solr-cloud-what-is-the-recommended-number-of-zookeepers-per-solr-instances/41931285#41931285). Then the zookeeper instances can be distributed as hard coded.
 
 
