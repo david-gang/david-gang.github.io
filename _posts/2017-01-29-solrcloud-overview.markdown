@@ -19,11 +19,30 @@ Called SolrCloud, these capabilities provide distributed indexing and search cap
 * Automatic load balancing and fail-over for queries
 * ZooKeeper integration for cluster coordination and configuration.
 
-When reading this is was not clear to me what this means and what Zookeeper is.
-In general the solr documentation is great for users with previous knowledge in solr but not as an introductory material.
+In order to understand this description let's understand what the motivation of SolrCloud is:
 
-I tried for several days to understand what Zookeeper is, what Solr Cloud is and how they interact.
-This will explained below.
+## High availability
+
+In every distributed system, a single point of failure should be avoided. 
+This means that even after an outage of a server we should be able to:
+* Update data
+* Read data
+
+## Data consistency
+The data should be eventually consistent across all replicas of a certain data. Also data race conditions should be avoided.
+This can happen when two nodes are updated with different data for a certain key
+
+## Data distribution
+Typically the data indexed by cloud is bigger than one node can handle. This requires that the data can be splitted in a reasonable way across nodes.
+This also means that the clients querying the index should get answers from all data splits.
+
+## Load balancing
+
+If the data is replicated across nodes, the clients should ideally spread the queries across all nodes, in order to avoid bottlenecks. 
+
+
+## Cluster coordination and configuration
+All solr nodes should have the same configuration. Additionaly there should be an easy way for clients to know  
 
 # Zookeeper
 
@@ -38,10 +57,10 @@ Zookeeper is more like a reception
 
 ![Reception]({{ site.github.url }}/assets/reception.jpg){:class="img-responsive"}
 
-Zookeper consists of a number of nodes which can be compared to a receptionist. There is nothing special with a certain node. There is no master slave relationship where beforehand we decide who may change the data and from whom we may read.
-As here with the receptionist there is no master worker.
+Zookeper consists of a number of nodes which can be compared to secretaries. There is nothing special with a certain node. There is no master slave relationship where beforehand we decide who may change the data and from whom we may read.
+As here with the secretaries there is no master worker.
 
-Every person can get to every recptionist and get a certain information.
+Every person can get to every secretary and get a certain information. Additionally every person can ask the secretary to get notified when a certain event occurs.
 
 The difference between Zookeeper and a reception is that only one node at a certain time can change the data.
 This node is called the leader node. The leader node is elected dynamically. The election process is not explained here.
