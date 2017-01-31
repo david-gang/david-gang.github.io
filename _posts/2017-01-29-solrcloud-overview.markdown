@@ -30,7 +30,7 @@ This means that even after an outage of a server we should be able to:
 
 ## Data consistency
 The data should be eventually consistent across all replicas of a certain data. Also data race conditions should be avoided.
-This can happen when two nodes are updated with different data for a certain key
+This can happen when two nodes are updated with different data for a certain key.
 
 ## Data distribution
 Typically the data indexed by cloud is bigger than one node can handle. This requires that the data can be splitted in a reasonable way across nodes.
@@ -43,6 +43,32 @@ If the data is replicated across nodes, the clients should ideally spread the qu
 
 ## Cluster coordination and configuration
 All solr nodes should have the same configuration. Additionaly there should be an easy way for clients to know  
+
+# How SolrCloud tackles these challenges
+
+In Solr cloud indices are called collections. 
+Ever collection is split into shards, which contains parts of the data.
+Every shard is stored on a certain Solr node. Every shard can be replicated on multiple nodes.
+  
+##   High availability
+The replication factor ensures, that even when a part of the servers fail, the system still is functioning. The number of servers which can fail depends on the replication factor.
+For a replication factor of n we can ensure that n-1 failures won't change the results.
+Additionally there is no predefined master node, which makes the data updates, so in theory every node which contains the replica can perform write operations.
+
+## Data consistency
+Even if in theory every node can update the index data of a certain shard, practically at every certain timepoint there is a leader node which makes the data updates.
+The leader node is elected after the system goes up and every time the previous leader goes down.
+When a client sends an update request to a node which is not the leader, the request is redirected to the leader node.
+This prevents race conditions as just one node can update the data at a certain time point.
+
+## Data distribution
+The split into shards fixes the data distribution problem. One point which is not so nice in SolrCloud is that there is no out the box rebalancing mechanism.
+Either a certain shard can be split into two or the whole data can be loaded into a new collection with a different number of shards.
+There is no mechanism which can be done in place.
+
+## Load balancing
+
+The Solr4j client knows how to distribute the queries around all replicas of a certain shard. It uses Zookeeper for it.
 
 # Zookeeper
 
